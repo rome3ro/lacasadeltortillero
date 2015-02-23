@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>La Casa del Tortillero</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+	
+	<script>
+		$(function(){
+			$('#slides').slides({
+				effect: 'fade',
+				fadeSpeed:700,
+				play: 7000,
+				pause: 4000,
+				generatePagination: false,
+				generateNextPrev:true,
+				crossfade: true,
+				hoverPause: true
+			});
+		});
+		$(function(){$('#slides .caption').hover(
+			function(){$(this).stop().animate({bottom:0}, 200)},
+			function(){$(this).stop().animate({bottom:-81}, 200)}
+		)});
+
+
+	</script>
+	<!--[if lt IE 8]>
+		<div style='clear: both; text-align:center; position: relative;'>
+			<a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+				<img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.">
+			</a>
+		</div>
+	<![endif]-->
+	<!--[if lt IE 9]>
+		<script src="js/html5.js"></script>
+		<link rel="stylesheet" href="css/ie.css"> 
+	<![endif]-->
+	<style type="text/css">
+.Capitalizar { text-transform: lowercase; }
+.Capitalizar:first-letter { text-transform: uppercase; }
+	</style>
+</head>
+<body id="page1">
+	<div class="main-outer-bg">
+		<div class="main-inner-bg">
+			<!--======================== header ============================-->
+			<header>
+				<div class="container_24">
+					<div class="grid_24">
+						<div class="wrapper indent-bottom">
+							<!--======================== logo ============================-->
+							<h1>
+								<%= link_to '', home_path %>
+							</h1>
+							
+						</div>
+						<div class="indent-bottom1">
+							<div class="navigation">
+								<!--======================== menu ============================-->
+								<nav>
+									<ul class="menu responsive-menu">
+										<li class="current"><%= link_to 'Inicio', home_path %></li>										
+										<li><a href="#">Productos</a>
+												<ul>					                            	
+					                                	<% if !@categories.blank? %>
+					                                	  <% for item in @categories %>
+					                                	    <li><%= link_to item.name, :controller => "producto", :tipo => item.id, :producto => item.name %> </li>
+					                                	  <% end %>
+					                                	<% else %>
+
+					                                   	<% end %>					                                
+					                            </ul>
+											</li>	
+										<li><%= link_to 'Paquetes',  productos_url(:tipo => '4', :producto => 'Paquetes') %></li>
+										<li><%= link_to 'Acerca', acerca_path %></li>
+										<li><%= link_to 'Ubicacion', ubicacion_path %></li>
+										<li class="last-item"><%= link_to 'Contacto', contacto_path %></li>
+									</ul>
+								</nav>
+								
+								<div class="clear"></div>
+							</div>
+						</div>
+						<!--=================== slider ==================-->
+						<div id="slides">
+							<div class="slides_container">
+								<div class="slide">
+									<%= image_tag(@home.slide_image_1_url, :size => "938x410", :class => "left") if @home.slide_image_1? %>
+									
+								</div>
+								<div class="slide">										
+									<%= image_tag(@home.slide_image_2_url, :size => "938x410", :class => "left") if @home.slide_image_2? %>
+									
+								</div>
+								<div class="slide">
+									<%= image_tag(@home.slide_image_3_url, :size => "938x410", :class => "left") if @home.slide_image_3? %>
+									
+								</div>
+								<div class="slide">
+								<%= image_tag(@home.slide_image_4_url, :size => "938x410", :class => "left") if @home.slide_image_4? %>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</header>
+			<!--======================== content ===========================-->
+			<section id="content">
+				<div class="container_24">
+					<div class="indent-bottom8-1">
+						<div class="grid_12">
+							<div class="col-6">
+								<div class="suffix_1">
+									<div class="box1 icon-1">
+										<h3 class="p4-1"><%= @home.icon_title_1 %></h3>
+										<p class="p5" ><%= HTML_Truncator.truncate(@home.icon_description_1,10) %>
+											<a href="javascript:TINY.box.show({html:'<strong><p><%= @home.icon_title_1 %></strong> </p> <%= @home.icon_description_1%>'});">Ver más</a></p>
+										
+									</div>
+								</div>
+							</div>
+							<div class="col-6 last-item">
+								<div class="suffix_1">
+									<div class="box1 icon-2">
+										<h3 class="p4-1"><%= @home.icon_title_2 %></h3>
+										<p class="p5" ><%= HTML_Truncator.truncate(@home.icon_description_2,10) %>
+											<a href="javascript:TINY.box.show({html:'<strong><p><%= @home.icon_title_2 %></strong> </p> <%= @home.icon_description_2%>'});">Ver más</a></p>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="grid_12 last-col">
+							<div class="col-6">
+								<div class="suffix_1">
+									<div class="box1 icon-3">
+										<h3 class="p4-1"><%= @home.icon_title_3 %></h3>
+										<p class="p5" ><%= HTML_Truncator.truncate(@home.icon_description_3,10) %>
+											<a href="javascript:TINY.box.show({html:'<strong><p><%= @home.icon_title_3 %></strong> </p> <%= @home.icon_description_3%>'});">Ver más</a></p>
+									</div>
+								</div>
+							</div>
+							<div class="col-6 last-item">
+								<div class="suffix_1">
+									<div class="box1 icon-4">
+										<h3 class="p4-1"><%= @home.icon_title_4 %></h3>
+										<p class="p5" ><%= HTML_Truncator.truncate(@home.icon_description_4,10) %>
+											<a href="javascript:TINY.box.show({html:'<strong><p><%= @home.icon_title_4 %></strong> </p> <%= @home.icon_description_4%>'});">Ver más</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+	<!--======================== footer ============================-->
+	<footer>
+		<div class="footer-text">
+			La Casa del Tortillero (c) 2013 | Hermosillo, Son. Mex.
+			<div class="footer-link"><!--{%FOOTER_LINK} --></div>
+		</div>
+	</footer>
+
+</body>
+</html>

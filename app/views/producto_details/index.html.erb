@@ -1,0 +1,29 @@
+<h1>Listing producto_details</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Image</th>
+    <th>Producto</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @producto_details.each do |producto_detail| %>
+  <tr>
+    <td><%= producto_detail.name %></td>
+    <td><%= producto_detail.description %></td>
+    <td><%= producto_detail.image %></td>
+    <td><%= producto_detail.producto_id %></td>
+    <td><%= link_to 'Show', producto_detail %></td>
+    <td><%= link_to 'Edit', edit_producto_detail_path(producto_detail) %></td>
+    <td><%= link_to 'Destroy', producto_detail, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Producto detail', new_producto_detail_path %>

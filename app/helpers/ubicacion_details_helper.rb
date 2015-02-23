@@ -1,0 +1,2 @@
+module UbicacionDetailsHelper
+end

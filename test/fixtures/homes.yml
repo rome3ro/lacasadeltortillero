@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  slide_image_1: MyString
+  slide_image_2: MyString
+  slide_image_3: MyString
+  slide_image_4: MyString
+  icon_title_1: MyString
+  icon_description_1: MyString
+  icon_title_2: MyString
+  icon_description_2: MyString
+  icon_title_3: MyString
+  icon_description_3: MyString
+  icon_title_4: MyString
+  icon_description_4: MyString
+
+two:
+  slide_image_1: MyString
+  slide_image_2: MyString
+  slide_image_3: MyString
+  slide_image_4: MyString
+  icon_title_1: MyString
+  icon_description_1: MyString
+  icon_title_2: MyString
+  icon_description_2: MyString
+  icon_title_3: MyString
+  icon_description_3: MyString
+  icon_title_4: MyString
+  icon_description_4: MyString

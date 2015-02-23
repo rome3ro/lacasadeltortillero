@@ -1,0 +1,21 @@
+<%= form_for(@acerca_cliente) do |f| %>
+  <% if @acerca_cliente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@acerca_cliente.errors.count, "error") %> prohibited this acerca_cliente from being saved:</h2>
+
+      <ul>
+      <% @acerca_cliente.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= f.text_field :image %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

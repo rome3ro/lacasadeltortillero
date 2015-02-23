@@ -1,0 +1,23 @@
+<h1>Listing acerca_clientes</h1>
+
+<table>
+  <tr>
+    <th>Image</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @acerca_clientes.each do |acerca_cliente| %>
+  <tr>
+    <td><%= acerca_cliente.image %></td>
+    <td><%= link_to 'Show', acerca_cliente %></td>
+    <td><%= link_to 'Edit', edit_acerca_cliente_path(acerca_cliente) %></td>
+    <td><%= link_to 'Destroy', acerca_cliente, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Acerca cliente', new_acerca_cliente_path %>

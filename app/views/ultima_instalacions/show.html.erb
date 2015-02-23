@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @ultima_instalacion.description %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @ultima_instalacion.image %>
+</p>
+
+
+<%= link_to 'Edit', edit_ultima_instalacion_path(@ultima_instalacion) %> |
+<%= link_to 'Back', ultima_instalacions_path %>

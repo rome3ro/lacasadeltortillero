@@ -1,0 +1,25 @@
+<h1>Listing ultima_instalacions</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Image</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ultima_instalacions.each do |ultima_instalacion| %>
+  <tr>
+    <td><%= ultima_instalacion.description %></td>
+    <td><%= ultima_instalacion.image %></td>
+    <td><%= link_to 'Show', ultima_instalacion %></td>
+    <td><%= link_to 'Edit', edit_ultima_instalacion_path(ultima_instalacion) %></td>
+    <td><%= link_to 'Destroy', ultima_instalacion, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ultima instalacion', new_ultima_instalacion_path %>
